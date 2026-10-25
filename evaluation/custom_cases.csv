@@ -1,0 +1,4 @@
+case_id,scenario_description,subject_reference,expected_status,expected_key_steps,rationale
+case_eval_001,"A worker reports a deletion as COMPLETE, but a data flow that mirrors a user profile to an archive is still active, so deleted data can be recreated.",user_11,INCOMPLETE,"REPORT_ACTIVE_DATA_FLOW;DISABLE_DATA_FLOW;VERIFY_DATA_FLOW_DISABLED","This removes the recreation path first."
+case_eval_002,"A support attachment still carries a historical identifier for the same subject, even though the case was reported COMPLETE.",user_42,INCOMPLETE,"REPORT_EXPOSED_PII;DELETE_RECORD;VERIFY_RECORD_ABSENT","The attachment is a direct copy of the affected person and cannot remain."
+case_eval_003,"The person asks for an information/correction/access request rather than deletion.",user_20,NOT_APPLICABLE,"","The request does not authorize deletion, so no remediation or verification is planned."
